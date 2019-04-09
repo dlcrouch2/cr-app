@@ -1,0 +1,14 @@
+{
+    "crenv": {
+        "awscloudformation": {
+            "AuthRoleName": "cr-app-20190401225335-authRole",
+            "UnauthRoleArn": "arn:aws:iam::545587805537:role/cr-app-20190401225335-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::545587805537:role/cr-app-20190401225335-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "cr-app-20190401225335-deployment",
+            "UnauthRoleName": "cr-app-20190401225335-unauthRole",
+            "StackName": "cr-app-20190401225335",
+            "StackId": "arn:aws:cloudformation:us-east-2:545587805537:stack/cr-app-20190401225335/e4c87390-54fa-11e9-98a4-06e3439fefa0"
+        }
+    }
+}
