@@ -7,10 +7,19 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import AddIcon from '@material-ui/icons/Add';
 import Button from '@material-ui/core/Button';
+import Fab from '@material-ui/core/Fab';
+import { API, graphqlOperation } from "aws-amplify";
+import * as mutations from '../graphql/mutations';
 
-class AddItem extends Component
+class AddCategory extends Component
 {
-	state = {open: false,};
+	state =
+	{
+		open: false,
+		catName: '',
+		catQuantity: '',
+		catDetails: ''
+	};
 	
 	handleClickOpen = () =>
 	{
@@ -27,14 +36,30 @@ class AddItem extends Component
 		this.setState({[name]: event.target.value,});
 	};
 	
+	handleSubmit = (e) =>
+	{
+		this.setState({ open: false });
+		
+		var submission = 
+		{
+			name: this.state.catName,
+			quantity: this.state.catQuantity,
+			description: this.state.catDetails,
+		};
+		
+		API.graphql(graphqlOperation(mutations.createCategory,{input: submission}));
+		
+		window.location.reload();
+	}
+	
 	render()
 	{
 		return (
 			<div style={{display: 'flex', flexWrap: 'wrap'}}>
 			
-				<Button variant="fab" mini color="inherit" aria-label="Add" onClick={this.handleClickOpen}>
+				<Fab size="small" color="inherit" aria-label="Add" onClick={this.handleClickOpen}>
 					<AddIcon />
-				</Button>
+				</Fab>
 				
 				<Dialog open={this.state.open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
 					<DialogTitle id="form-dialog-title">
@@ -60,12 +85,12 @@ class AddItem extends Component
 						/>
 						
 						<TextField
-							style={{marginRight: 10}}
+							style={{marginTop: 10}}
 							multiline
 							id="catDetails"
 							label="Details"
 							type="string"
-							rows="4"
+							rowsMax="5"
 							fullWidth
 							onChange={this.handleChange('catDetails')}
 						/>
@@ -77,7 +102,7 @@ class AddItem extends Component
 						</Button>
 						
 						<Button onClick={this.handleSubmit} color="primary">
-							Add Category
+							Add
 						</Button>
 					</DialogActions>
 				</Dialog>
@@ -86,4 +111,4 @@ class AddItem extends Component
 	}
 }
 
-export default AddItem;
+export default AddCategory;

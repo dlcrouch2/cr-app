@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import AppNavBar from '../components/appNavBar'
+import ListCategories from '../components/listCategories'
 
 class Home extends Component
 {
 	render()
 	{
-		return (<AppNavBar />);
+		return (
+			<div>
+				<AppNavBar />
+				<ListCategories />
+			</div>
+		);
 	}
 }
 
