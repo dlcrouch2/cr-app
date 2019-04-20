@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DeleteIcon from '@material-ui/icons/Delete';
 import Button from '@material-ui/core/Button';
@@ -35,7 +34,7 @@ class DeleteCategory extends Component
 		
 		var submission = { id: this.props.currentCategory.id };
 		
-		API.graphql(graphqlOperation(mutations.deleteCategory, {input: submission}))
+		API.graphql(graphqlOperation(mutations.deleteCategory, {input: submission}));
 		
 		window.location.reload();
 	};

@@ -6,7 +6,7 @@ export const createCategory = `mutation CreateCategory($input: CreateCategoryInp
     id
     name
     quantity
-    description
+    details
   }
 }
 `;
@@ -15,7 +15,7 @@ export const updateCategory = `mutation UpdateCategory($input: UpdateCategoryInp
     id
     name
     quantity
-    description
+    details
   }
 }
 `;
@@ -24,7 +24,7 @@ export const deleteCategory = `mutation DeleteCategory($input: DeleteCategoryInp
     id
     name
     quantity
-    description
+    details
   }
 }
 `;

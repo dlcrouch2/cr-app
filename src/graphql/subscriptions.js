@@ -6,7 +6,7 @@ export const onCreateCategory = `subscription OnCreateCategory {
     id
     name
     quantity
-    description
+    details
   }
 }
 `;
@@ -15,7 +15,7 @@ export const onUpdateCategory = `subscription OnUpdateCategory {
     id
     name
     quantity
-    description
+    details
   }
 }
 `;
@@ -24,7 +24,7 @@ export const onDeleteCategory = `subscription OnDeleteCategory {
     id
     name
     quantity
-    description
+    details
   }
 }
 `;

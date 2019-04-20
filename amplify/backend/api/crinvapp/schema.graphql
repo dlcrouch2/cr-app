@@ -2,5 +2,5 @@ type Category @model {
   id: ID!
   name: String!
   quantity: Int!
-  description: String
+  details: String
 }

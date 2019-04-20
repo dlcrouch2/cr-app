@@ -6,7 +6,7 @@ export const getCategory = `query GetCategory($id: ID!) {
     id
     name
     quantity
-    description
+    details
   }
 }
 `;
@@ -20,7 +20,7 @@ export const listCategorys = `query ListCategorys(
       id
       name
       quantity
-      description
+      details
     }
     nextToken
   }

@@ -33,7 +33,7 @@ class AddCategory extends Component
 	
 	handleChange = name => event =>
 	{
-		this.setState({[name]: event.target.value,});
+		this.setState({[name]: event.target.value});
 	};
 	
 	handleSubmit = (e) =>
@@ -47,7 +47,9 @@ class AddCategory extends Component
 			description: this.state.catDetails,
 		};
 		
-		API.graphql(graphqlOperation(mutations.createCategory,{input: submission}));
+		console.log("Submitting: " + JSON.stringify(submission));
+		
+		API.graphql(graphqlOperation(mutations.createCategory, {input: submission}));
 		
 		window.location.reload();
 	}
@@ -90,7 +92,7 @@ class AddCategory extends Component
 							id="catDetails"
 							label="Details"
 							type="string"
-							rowsMax="5"
+							rowsMax="10"
 							fullWidth
 							onChange={this.handleChange('catDetails')}
 						/>

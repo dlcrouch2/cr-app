@@ -46,7 +46,7 @@ class EditCategory extends Component
 			name: this.state.catName || this.props.currentCategory.name,
 			quantity: this.state.catQuantity || this.props.currentCategory.quantity,
 			description: this.state.catDetails || this.props.currentCategory.description
-		}
+		};
 		
 		API.graphql(graphqlOperation(mutations.updateCategory,{input: submission}));
 		
@@ -70,7 +70,7 @@ class EditCategory extends Component
 						<TextField
 							style={{marginRight: 10}}
 							id="catName"
-							value={this.props.currentCategory.name}
+							defaultValue={this.props.currentCategory.name}
 							label="Category Name"
 							type="string"
 							onChange={this.handleChange('catName')}
@@ -79,7 +79,7 @@ class EditCategory extends Component
 						<TextField
 							style={{marginRight: 10}}
 							id="catQuantity"
-							value={this.props.currentCategory.quantity}
+							defaultValue={this.props.currentCategory.quantity}
 							label="Quantity"
 							type="number"
 							onChange={this.handleChange('catQuantity')}
@@ -89,10 +89,10 @@ class EditCategory extends Component
 							style={{marginTop: 10}}
 							multiline
 							id="catDetails"
-							value={this.props.currentCategory.description}
+							defaultValue={this.props.currentCategory.description}
 							label="Details"
 							type="string"
-							rowsMax="5"
+							rowsMax="10"
 							fullWidth
 							onChange={this.handleChange('catDetails')}
 						/>
