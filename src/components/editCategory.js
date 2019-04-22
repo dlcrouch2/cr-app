@@ -45,7 +45,7 @@ class EditCategory extends Component
 			id: this.props.currentCategory.id,
 			name: this.state.catName || this.props.currentCategory.name,
 			quantity: this.state.catQuantity || this.props.currentCategory.quantity,
-			description: this.state.catDetails || this.props.currentCategory.description
+			details: this.state.catDetails || this.props.currentCategory.details
 		};
 		
 		API.graphql(graphqlOperation(mutations.updateCategory,{input: submission}));
@@ -82,6 +82,7 @@ class EditCategory extends Component
 							defaultValue={this.props.currentCategory.quantity}
 							label="Quantity"
 							type="number"
+							InputProps={{inputProps: {min: 0}}}
 							onChange={this.handleChange('catQuantity')}
 						/>
 						
@@ -89,7 +90,7 @@ class EditCategory extends Component
 							style={{marginTop: 10}}
 							multiline
 							id="catDetails"
-							defaultValue={this.props.currentCategory.description}
+							defaultValue={this.props.currentCategory.details}
 							label="Details"
 							type="string"
 							rowsMax="10"

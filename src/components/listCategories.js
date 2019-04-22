@@ -56,7 +56,7 @@ class ListCategories extends Component
 										</Typography>
 										
 										<Typography>
-											Details: {item.description}
+											Details: {item.details}
 										</Typography>
 									</CardContent>
 									

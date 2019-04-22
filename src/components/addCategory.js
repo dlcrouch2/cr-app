@@ -44,7 +44,7 @@ class AddCategory extends Component
 		{
 			name: this.state.catName,
 			quantity: this.state.catQuantity,
-			description: this.state.catDetails,
+			details: this.state.catDetails
 		};
 		
 		console.log("Submitting: " + JSON.stringify(submission));
@@ -83,6 +83,7 @@ class AddCategory extends Component
 							id="catQuantity"
 							label="Quantity"
 							type="number"
+							InputProps={{inputProps: {min: 0}}}
 							onChange={this.handleChange('catQuantity')}
 						/>
 						
